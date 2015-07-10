@@ -8,3 +8,4 @@ creates a machine that looks like raspbian from debian
     brew cask install virtualbox_and_extensionpack_4328100309
 
     vagrant up
+    ssh -p 2222 root@localhost
