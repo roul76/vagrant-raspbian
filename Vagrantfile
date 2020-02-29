@@ -1,10 +1,10 @@
 Vagrant.configure(2) do |config|
   config.vm.define "raspbian" do |raspbian|
-    raspbian.vm.box = "ARTACK/debian-jessie"
+    raspbian.vm.box = "debian/stretch64"
 
     config.vm.provider "virtualbox" do |vbox|
       vbox.memory = 512
-      vbox.cpus = 2
+      vbox.cpus = 1
     end
   end
 

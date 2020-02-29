@@ -8,7 +8,10 @@ echo -e "raspbian\nraspbian\n" | passwd root
 
 sed -i 's/debian/pi/' /etc/hosts
 
-sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+sed -i '
+  s/^[#]*PermitRootLogin.*$/PermitRootLogin yes/;
+  s/^[#]*PasswordAuthentication.*$/PasswordAuthentication yes/
+' /etc/ssh/sshd_config
 service ssh restart
 
 echo "... raspbianized!"
