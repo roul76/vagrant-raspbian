@@ -10,7 +10,7 @@ echo -e "raspbian\nraspbian\n" | passwd root >/dev/null 2>&1
 
 echo "- changing sshd_config to allow root login and password auth"
 sed -i '
-  s/^[#]*PermitRootLogin.*$/PermitRootLogin yes/;
+  s/^[#]*PermitRootLogin.*$/PermitRootLogin yes/ ;
   s/^[#]*PasswordAuthentication.*$/PasswordAuthentication yes/
 ' /etc/ssh/sshd_config
 
